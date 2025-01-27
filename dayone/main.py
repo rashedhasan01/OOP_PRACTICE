@@ -1,20 +1,15 @@
-# This is a sample Python script.
+"""
+Read a CSV file and find the max and minimum salaries.
+"""
+from Employee import Employee
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+if __name__ == "__main__":
+    csv_file_path = "salarysheet.csv"
+    Employee.load_from_csv(csv_file_path)
+    max_salary_employee = Employee.get_max_salary_employee()
+    if max_salary_employee:
+        print(f"Max Salary: {max_salary_employee.name}, {max_salary_employee.salary}")
+    min_salary_employee = Employee.get_min_salary_employee()
+    if min_salary_employee:
+        print(f"Min Salary: {min_salary_employee.name}, {min_salary_employee.salary}")
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-
-
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
